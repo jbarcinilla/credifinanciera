@@ -1,0 +1,11 @@
+com\cf\controller\LoginController.class
+com\cf\controller\ConexionBD.class
+com\cf\services\ServiciosRest.class
+org\netbeans\rest\application\config\ApplicationConfig.class
+com\cf\model\NewClass.class
+com\cf\model\Persona.class
+com\cf\services\CrossOriginResourceSharingFilter.class
+com\cf\services\LoginServices.class
+com\cf\controller\ServicesController.class
+com\cf\model\Usuario.class
+org\netbeans\rest\application\config\Secured.class

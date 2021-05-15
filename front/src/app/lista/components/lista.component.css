@@ -1,0 +1,32 @@
+.mat-card {
+    background: #fff;
+    color: #5e3ab7;
+    justify-content: center;
+}
+
+.mat-card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-grid-tile {
+    display: flex;
+    justify-content: center;
+}
+
+
+.align-right{
+    display: flex;
+    padding: 21px 0;
+    justify-content: left;
+  }
+
+table {
+    width: 100%;
+  }
+
+  .button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  

@@ -1,0 +1,91 @@
+<div class="container">
+    <mat-card color="primary" layout="row" layout-align="center center">
+        <mat-card-title color="primary">Details</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formDetail">
+                <mat-grid-list cols="2" rowHeight="3:1">
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Número Documento</mat-label>
+                            <input matInput placeholder="Numero documento" formControlName="nroDocumento">
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Nombre</mat-label>
+                            <input matInput placeholder="Nombre completo" formControlName="nombre">
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Apellido</mat-label>
+                            <input matInput placeholder="Apellido completo" formControlName="apellido">
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Fecha Nacimiento</mat-label>
+                            <input formControlName="fechaNacimiento" matInput>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ciudad</mat-label>
+                            <select matNativeControl formControlName="ciudad">
+                                <option value=""></option>
+                                <option value="Bogotá">Bogotá</option>
+                                <option value="Medellín">Medellín</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Cartagena de Indias">Cartagena de Indias</option>
+                                <option value="Soacha">Soacha</option>
+                                <option value="Cúcuta">Cúcuta</option>
+                            </select>
+
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Correo electronico</mat-label>
+                            <input matInput placeholder="Correo electronico" formControlName="correoElectronico">
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Telefonos</mat-label>
+                            <input matInput placeholder="Telefonos" formControlName="telefono">
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ocupacion</mat-label>
+                            <select matNativeControl formControlName="ocupacion">
+                                <option value=""></option>
+                                <option value="Empelado">Empelado</option>
+                                <option value="Independiente">Independiente</option>
+                            </select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                
+                    
+                </mat-grid-list>
+               
+                <button class="full-width" type="submit" mat-raised-button color="primary" (click)="itemclickEdit()">
+                    Edit
+                </button>
+
+                <button class="full-width" type="submit" mat-raised-button color="primary" (click)="itemclickDelete()">
+                    Delete
+                </button>
+               
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

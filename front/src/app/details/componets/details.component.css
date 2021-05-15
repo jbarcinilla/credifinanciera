@@ -1,0 +1,22 @@
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    align-items: center; 
+    justify-content: center;
+}
+
+.mat-card {
+    background: #fff;
+    color: #5e3ab7;
+    justify-content: center;
+}
+
+.mat-card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.full-width {
+    width: 100%;
+    margin: 1%;
+}

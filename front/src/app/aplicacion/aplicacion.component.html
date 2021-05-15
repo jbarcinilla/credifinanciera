@@ -1,0 +1,47 @@
+
+<p>
+  <mat-toolbar color="primary">
+    <span class="fill-remaining-space">
+      <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"
+        (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item>
+          <mat-icon (click)="clickMenuItem('Home')">home</mat-icon>
+          <span (click)="clickMenuItem('Home')">Home</span>
+        </button>
+
+        <button mat-menu-item [matMenuTriggerFor]="contact">
+          <mat-icon>people_outline</mat-icon>
+          <span>Contact</span>
+
+        </button>
+
+        <mat-menu #contact="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item (click)="clickMenuItem('Contact')">Save contacts</button>
+          <button mat-menu-item (click)="clickMenuItem('List')">List contacts</button>
+        </mat-menu>
+
+        <button mat-menu-item>
+          <mat-icon>videocam</mat-icon>
+          <span>Let's talk</span>
+        </button>
+
+        <button mat-menu-item>
+          <mat-icon (click)="clickMenuItem('Logout')">exit_to_app</mat-icon>
+          <span (click)="clickMenuItem('Logout')">Logout</span>
+        </button>
+
+      </mat-menu>
+
+    </span>
+    <span class="fill-remaining-space">Application Title</span>
+  </mat-toolbar>
+</p>
+
+
+
+
+<router-outlet></router-outlet>

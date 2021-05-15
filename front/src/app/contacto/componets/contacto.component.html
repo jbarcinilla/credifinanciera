@@ -1,0 +1,112 @@
+<div class="container">
+    <mat-card color="primary" layout="row" layout-align="center center">
+        <mat-card-title color="primary">Contact</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formContacto">
+                <mat-grid-list cols="2" rowHeight="3:1">
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Número Documento</mat-label>
+                            <input matInput placeholder="Numero documento" formControlName="nroDocumento"
+                                onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
+                            <mat-error
+                                *ngIf="formContacto.get('nroDocumento').invalid && (formContacto.get('nroDocumento').dirty || formContacto.get('nroDocumento').touched)">
+                                numero Documento requerido</mat-error>
+                            <div *ngIf="formContacto.get('nroDocumento').hasError('maxlength')">Màximo 20 caracteres
+                            </div>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Nombre</mat-label>
+                            <input matInput placeholder="Nombre completo" formControlName="nombre">
+                            <mat-error
+                                *ngIf="formContacto.get('nombre').invalid && (formContacto.get('nombre').dirty || formContacto.get('nombre').touched)">
+                                nombre requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Apellido</mat-label>
+                            <input matInput placeholder="Apellido completo" formControlName="apellido">
+                            <mat-error
+                                *ngIf="formContacto.get('apellido').invalid && (formContacto.get('apellido').dirty || formContacto.get('apellido').touched)">
+                                apellido requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Fecha Nacimiento</mat-label>
+                            <input formControlName="fechaNacimiento" matInput [max]="maxDate" [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error
+                                *ngIf="formContacto.get('fechaNacimiento').invalid && (formContacto.get('fechaNacimiento').dirty || formContacto.get('fechaNacimiento').touched)">
+                                Fecha nacimiento requerida</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ciudad</mat-label>
+                            <select matNativeControl formControlName="ciudad">
+                                <option value=""></option>
+                                <option value="Bogotá">Bogotá</option>
+                                <option value="Medellín">Medellín</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Cartagena de Indias">Cartagena de Indias</option>
+                                <option value="Soacha">Soacha</option>
+                                <option value="Cúcuta">Cúcuta</option>
+                            </select>
+                            <mat-error
+                                *ngIf="formContacto.get('ciudad').invalid && (formContacto.get('ciudad').dirty || formContacto.get('ciudad').touched)">
+                                ciudad requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Correo electronico</mat-label>
+                            <input matInput placeholder="Correo electronico" formControlName="correoElectronico">
+                            <mat-error
+                                *ngIf="formContacto.get('correoElectronico').invalid && (formContacto.get('correoElectronico').dirty || formContacto.get('correoElectronico').touched)">
+                                correo Electronico requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Telefonos</mat-label>
+                            <input matInput placeholder="Telefonos" formControlName="telefono">
+                            <mat-error
+                                *ngIf="formContacto.get('telefono').invalid && (formContacto.get('telefono').dirty || formContacto.get('telefono').touched)">
+                                telefono requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Ocupacion</mat-label>
+                            <select matNativeControl formControlName="ocupacion">
+                                <option value=""></option>
+                                <option value="Empelado">Empelado</option>
+                                <option value="Independiente">Independiente</option>
+                            </select>
+                            <mat-error
+                                *ngIf="formContacto.get('ocupacion').invalid && (formContacto.get('ocupacion').dirty || formContacto.get('ocupacion').touched)">
+                                ocupacion requerido</mat-error>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                <button class="full-width" type="submit" mat-raised-button color="primary" (click)="itemclick()">
+                    Save
+                </button>
+            </form>
+        </mat-card-content>
+
+    </mat-card>
+</div>
